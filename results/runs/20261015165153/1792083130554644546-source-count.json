@@ -1,0 +1,79 @@
+{
+  "id": "20261015_165210_00009_x55ec",
+  "label": "source-count",
+  "sql": "SELECT count(*) FROM tpch.sf1.customer",
+  "codec": "ZSTD",
+  "wall_seconds": 0.15660963600021205,
+  "stats": {
+    "state": "FINISHED",
+    "queued": false,
+    "scheduled": true,
+    "progressPercentage": 100.0,
+    "runningPercentage": 0.0,
+    "nodes": 1,
+    "totalSplits": 19,
+    "queuedSplits": 0,
+    "runningSplits": 0,
+    "completedSplits": 19,
+    "planningTimeMillis": 28,
+    "analysisTimeMillis": 4,
+    "cpuTimeMillis": 322,
+    "wallTimeMillis": 489,
+    "queuedTimeMillis": 1,
+    "elapsedTimeMillis": 133,
+    "finishingTimeMillis": 0,
+    "physicalInputTimeMillis": 0,
+    "processedRows": 150000,
+    "processedBytes": 0,
+    "physicalInputBytes": 0,
+    "physicalWrittenBytes": 0,
+    "internalNetworkInputBytes": 704,
+    "peakMemoryBytes": 1360,
+    "spilledBytes": 0,
+    "rootStage": {
+      "stageId": "0",
+      "state": "FINISHED",
+      "done": true,
+      "nodes": 1,
+      "totalSplits": 3,
+      "queuedSplits": 0,
+      "runningSplits": 0,
+      "completedSplits": 3,
+      "cpuTimeMillis": 6,
+      "wallTimeMillis": 7,
+      "processedRows": 16,
+      "processedBytes": 704,
+      "physicalInputBytes": 0,
+      "failedTasks": 0,
+      "coordinatorOnly": false,
+      "subStages": [
+        {
+          "stageId": "1",
+          "state": "FINISHED",
+          "done": true,
+          "nodes": 1,
+          "totalSplits": 16,
+          "queuedSplits": 0,
+          "runningSplits": 0,
+          "completedSplits": 16,
+          "cpuTimeMillis": 316,
+          "wallTimeMillis": 482,
+          "processedRows": 150000,
+          "processedBytes": 0,
+          "physicalInputBytes": 0,
+          "failedTasks": 0,
+          "coordinatorOnly": false,
+          "subStages": []
+        }
+      ]
+    }
+  },
+  "columns": [
+    "_col0"
+  ],
+  "rows": [
+    [
+      150000
+    ]
+  ]
+}

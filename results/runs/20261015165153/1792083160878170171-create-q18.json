@@ -1,0 +1,136 @@
+{
+  "id": "20261015_165240_00030_x55ec",
+  "label": "create-q18",
+  "sql": "CREATE TABLE lakekeeper.gold_20261015165153.q18 WITH (format='PARQUET',format_version=2) AS SELECT name,custkey,orderkey,orderdate,totalprice,sum(quantity) AS total_quantity\n       FROM lakekeeper.silver_20261015165153.order_lines\n       GROUP BY name,custkey,orderkey,orderdate,totalprice\n       ORDER BY totalprice DESC,orderdate,orderkey LIMIT 100",
+  "codec": "SNAPPY",
+  "wall_seconds": 0.46653293700001086,
+  "stats": {
+    "state": "FINISHED",
+    "queued": false,
+    "scheduled": true,
+    "progressPercentage": 100.0,
+    "runningPercentage": 0.0,
+    "nodes": 1,
+    "totalSplits": 24,
+    "queuedSplits": 0,
+    "runningSplits": 0,
+    "completedSplits": 24,
+    "planningTimeMillis": 82,
+    "analysisTimeMillis": 29,
+    "cpuTimeMillis": 137,
+    "wallTimeMillis": 279,
+    "queuedTimeMillis": 1,
+    "elapsedTimeMillis": 447,
+    "finishingTimeMillis": 1,
+    "physicalInputTimeMillis": 0,
+    "processedRows": 399,
+    "processedBytes": 4094,
+    "physicalInputBytes": 4094,
+    "physicalWrittenBytes": 2814,
+    "internalNetworkInputBytes": 19175,
+    "peakMemoryBytes": 5690,
+    "spilledBytes": 0,
+    "rootStage": {
+      "stageId": "0",
+      "state": "FINISHED",
+      "done": true,
+      "nodes": 1,
+      "totalSplits": 3,
+      "queuedSplits": 0,
+      "runningSplits": 0,
+      "completedSplits": 3,
+      "cpuTimeMillis": 47,
+      "wallTimeMillis": 168,
+      "processedRows": 17,
+      "processedBytes": 7675,
+      "physicalInputBytes": 0,
+      "failedTasks": 0,
+      "coordinatorOnly": true,
+      "subStages": [
+        {
+          "stageId": "1",
+          "state": "FINISHED",
+          "done": true,
+          "nodes": 1,
+          "totalSplits": 10,
+          "queuedSplits": 0,
+          "runningSplits": 0,
+          "completedSplits": 10,
+          "cpuTimeMillis": 37,
+          "wallTimeMillis": 49,
+          "processedRows": 57,
+          "processedBytes": 3906,
+          "physicalInputBytes": 0,
+          "failedTasks": 0,
+          "coordinatorOnly": false,
+          "subStages": [
+            {
+              "stageId": "2",
+              "state": "FINISHED",
+              "done": true,
+              "nodes": 1,
+              "totalSplits": 3,
+              "queuedSplits": 0,
+              "runningSplits": 0,
+              "completedSplits": 3,
+              "cpuTimeMillis": 3,
+              "wallTimeMillis": 3,
+              "processedRows": 57,
+              "processedBytes": 3906,
+              "physicalInputBytes": 0,
+              "failedTasks": 0,
+              "coordinatorOnly": false,
+              "subStages": [
+                {
+                  "stageId": "3",
+                  "state": "FINISHED",
+                  "done": true,
+                  "nodes": 1,
+                  "totalSplits": 7,
+                  "queuedSplits": 0,
+                  "runningSplits": 0,
+                  "completedSplits": 7,
+                  "cpuTimeMillis": 20,
+                  "wallTimeMillis": 24,
+                  "processedRows": 57,
+                  "processedBytes": 3688,
+                  "physicalInputBytes": 0,
+                  "failedTasks": 0,
+                  "coordinatorOnly": false,
+                  "subStages": [
+                    {
+                      "stageId": "4",
+                      "state": "FINISHED",
+                      "done": true,
+                      "nodes": 1,
+                      "totalSplits": 1,
+                      "queuedSplits": 0,
+                      "runningSplits": 0,
+                      "completedSplits": 1,
+                      "cpuTimeMillis": 30,
+                      "wallTimeMillis": 35,
+                      "processedRows": 399,
+                      "processedBytes": 4094,
+                      "physicalInputBytes": 4094,
+                      "failedTasks": 0,
+                      "coordinatorOnly": false,
+                      "subStages": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "columns": [
+    "rows"
+  ],
+  "rows": [
+    [
+      57
+    ]
+  ]
+}

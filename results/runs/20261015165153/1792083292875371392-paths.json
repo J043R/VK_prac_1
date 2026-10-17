@@ -1,0 +1,60 @@
+{
+  "id": "20261015_165452_00130_x55ec",
+  "label": "paths",
+  "sql": "SELECT file_path FROM lakekeeper.bench_20261015165153_orc_zstd.\"customer$files\"",
+  "codec": "ZSTD",
+  "wall_seconds": 0.032728572000451095,
+  "stats": {
+    "state": "FINISHED",
+    "queued": false,
+    "scheduled": true,
+    "progressPercentage": 100.0,
+    "runningPercentage": 0.0,
+    "nodes": 1,
+    "totalSplits": 1,
+    "queuedSplits": 0,
+    "runningSplits": 0,
+    "completedSplits": 1,
+    "planningTimeMillis": 3,
+    "analysisTimeMillis": 8,
+    "cpuTimeMillis": 4,
+    "wallTimeMillis": 4,
+    "queuedTimeMillis": 0,
+    "elapsedTimeMillis": 23,
+    "finishingTimeMillis": 1,
+    "physicalInputTimeMillis": 0,
+    "processedRows": 1,
+    "processedBytes": 2288,
+    "physicalInputBytes": 2288,
+    "physicalWrittenBytes": 0,
+    "internalNetworkInputBytes": 0,
+    "peakMemoryBytes": 280,
+    "spilledBytes": 0,
+    "rootStage": {
+      "stageId": "0",
+      "state": "FINISHED",
+      "done": true,
+      "nodes": 1,
+      "totalSplits": 1,
+      "queuedSplits": 0,
+      "runningSplits": 0,
+      "completedSplits": 1,
+      "cpuTimeMillis": 4,
+      "wallTimeMillis": 4,
+      "processedRows": 1,
+      "processedBytes": 2288,
+      "physicalInputBytes": 2288,
+      "failedTasks": 0,
+      "coordinatorOnly": false,
+      "subStages": []
+    }
+  },
+  "columns": [
+    "file_path"
+  ],
+  "rows": [
+    [
+      "s3://warehouse/pr1/01a1407c-ef01-7461-8a12-838e0542cdcd/customer-429f7e354b824d93a1d0d8899d7cebd3/data/20261015_165452_00127_x55ec-e40e86cd-22aa-44c3-b2f6-102cf25bdf64.orc"
+    ]
+  ]
+}

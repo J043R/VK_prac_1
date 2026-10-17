@@ -1,0 +1,13 @@
+{
+  "run": "20261015165153",
+  "experiment_complete": true,
+  "benchmark_variants": 7,
+  "measured_repeats": 35,
+  "gold_rows": 57,
+  "quality_violations": 0,
+  "gold_matches_reference": true,
+  "snapshot_restored": true,
+  "schema_preserved_data_files": true,
+  "spark_matches_trino": true,
+  "statistics_recomputed": true
+}

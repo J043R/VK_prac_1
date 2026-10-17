@@ -1,0 +1,12 @@
+{
+  "run": "20261015165153",
+  "data_files_unchanged": true,
+  "new_column_nulls": 399,
+  "silver_rows": 399,
+  "snapshot_id": 5139020022540202850,
+  "rows_before": 57,
+  "rows_after_duplicate": 58,
+  "rows_restored": 57,
+  "time_travel_equal": true,
+  "restore_equal": true
+}

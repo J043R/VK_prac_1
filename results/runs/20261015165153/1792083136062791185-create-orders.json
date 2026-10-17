@@ -1,0 +1,98 @@
+{
+  "id": "20261015_165210_00010_x55ec",
+  "label": "create-orders",
+  "sql": "CREATE TABLE lakekeeper.bronze_20261015165153.orders WITH (format='PARQUET',format_version=2) AS SELECT * FROM tpch.sf1.orders",
+  "codec": "ZSTD",
+  "wall_seconds": 5.497876833999726,
+  "stats": {
+    "state": "FINISHED",
+    "queued": false,
+    "scheduled": true,
+    "progressPercentage": 100.0,
+    "runningPercentage": 0.0,
+    "nodes": 1,
+    "totalSplits": 29,
+    "queuedSplits": 0,
+    "runningSplits": 0,
+    "completedSplits": 29,
+    "planningTimeMillis": 114,
+    "analysisTimeMillis": 10,
+    "cpuTimeMillis": 17337,
+    "wallTimeMillis": 27737,
+    "queuedTimeMillis": 1,
+    "elapsedTimeMillis": 5460,
+    "finishingTimeMillis": 1,
+    "physicalInputTimeMillis": 0,
+    "processedRows": 1500000,
+    "processedBytes": 0,
+    "physicalInputBytes": 0,
+    "physicalWrittenBytes": 36645011,
+    "internalNetworkInputBytes": 181740831,
+    "peakMemoryBytes": 49942879,
+    "spilledBytes": 0,
+    "rootStage": {
+      "stageId": "0",
+      "state": "FINISHED",
+      "done": true,
+      "nodes": 1,
+      "totalSplits": 3,
+      "queuedSplits": 0,
+      "runningSplits": 0,
+      "completedSplits": 3,
+      "cpuTimeMillis": 147,
+      "wallTimeMillis": 447,
+      "processedRows": 18,
+      "processedBytes": 325266,
+      "physicalInputBytes": 0,
+      "failedTasks": 0,
+      "coordinatorOnly": true,
+      "subStages": [
+        {
+          "stageId": "1",
+          "state": "FINISHED",
+          "done": true,
+          "nodes": 1,
+          "totalSplits": 10,
+          "queuedSplits": 0,
+          "runningSplits": 0,
+          "completedSplits": 10,
+          "cpuTimeMillis": 4870,
+          "wallTimeMillis": 5960,
+          "processedRows": 1500000,
+          "processedBytes": 181415565,
+          "physicalInputBytes": 0,
+          "failedTasks": 0,
+          "coordinatorOnly": false,
+          "subStages": [
+            {
+              "stageId": "2",
+              "state": "FINISHED",
+              "done": true,
+              "nodes": 1,
+              "totalSplits": 16,
+              "queuedSplits": 0,
+              "runningSplits": 0,
+              "completedSplits": 16,
+              "cpuTimeMillis": 12320,
+              "wallTimeMillis": 21330,
+              "processedRows": 1500000,
+              "processedBytes": 0,
+              "physicalInputBytes": 0,
+              "failedTasks": 0,
+              "coordinatorOnly": false,
+              "subStages": []
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "columns": [
+    "rows"
+  ],
+  "rows": [
+    [
+      1500000
+    ]
+  ]
+}

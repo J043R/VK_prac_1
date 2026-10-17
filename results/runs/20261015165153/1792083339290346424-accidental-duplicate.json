@@ -1,0 +1,117 @@
+{
+  "id": "20261015_165539_00184_x55ec",
+  "label": "accidental-duplicate",
+  "sql": "INSERT INTO lakekeeper.silver_20261015165153.recovery_demo SELECT * FROM lakekeeper.silver_20261015165153.recovery_demo LIMIT 1",
+  "codec": "ZSTD",
+  "wall_seconds": 0.34541819500009296,
+  "stats": {
+    "state": "FINISHED",
+    "queued": false,
+    "scheduled": true,
+    "progressPercentage": 100.0,
+    "runningPercentage": 0.0,
+    "nodes": 1,
+    "totalSplits": 17,
+    "queuedSplits": 0,
+    "runningSplits": 0,
+    "completedSplits": 17,
+    "planningTimeMillis": 29,
+    "analysisTimeMillis": 17,
+    "cpuTimeMillis": 61,
+    "wallTimeMillis": 213,
+    "queuedTimeMillis": 1,
+    "elapsedTimeMillis": 320,
+    "finishingTimeMillis": 1,
+    "physicalInputTimeMillis": 0,
+    "processedRows": 1,
+    "processedBytes": 2272,
+    "physicalInputBytes": 2272,
+    "physicalWrittenBytes": 1077,
+    "internalNetworkInputBytes": 5668,
+    "peakMemoryBytes": 3174,
+    "spilledBytes": 0,
+    "rootStage": {
+      "stageId": "0",
+      "state": "FINISHED",
+      "done": true,
+      "nodes": 1,
+      "totalSplits": 3,
+      "queuedSplits": 0,
+      "runningSplits": 0,
+      "completedSplits": 3,
+      "cpuTimeMillis": 48,
+      "wallTimeMillis": 191,
+      "processedRows": 17,
+      "processedBytes": 5248,
+      "physicalInputBytes": 0,
+      "failedTasks": 0,
+      "coordinatorOnly": true,
+      "subStages": [
+        {
+          "stageId": "1",
+          "state": "FINISHED",
+          "done": true,
+          "nodes": 1,
+          "totalSplits": 10,
+          "queuedSplits": 0,
+          "runningSplits": 0,
+          "completedSplits": 10,
+          "cpuTimeMillis": 11,
+          "wallTimeMillis": 20,
+          "processedRows": 1,
+          "processedBytes": 210,
+          "physicalInputBytes": 0,
+          "failedTasks": 0,
+          "coordinatorOnly": false,
+          "subStages": [
+            {
+              "stageId": "2",
+              "state": "FINISHED",
+              "done": true,
+              "nodes": 1,
+              "totalSplits": 3,
+              "queuedSplits": 0,
+              "runningSplits": 0,
+              "completedSplits": 3,
+              "cpuTimeMillis": 1,
+              "wallTimeMillis": 1,
+              "processedRows": 1,
+              "processedBytes": 210,
+              "physicalInputBytes": 0,
+              "failedTasks": 0,
+              "coordinatorOnly": false,
+              "subStages": [
+                {
+                  "stageId": "3",
+                  "state": "FINISHED",
+                  "done": true,
+                  "nodes": 1,
+                  "totalSplits": 1,
+                  "queuedSplits": 0,
+                  "runningSplits": 0,
+                  "completedSplits": 1,
+                  "cpuTimeMillis": 1,
+                  "wallTimeMillis": 1,
+                  "processedRows": 1,
+                  "processedBytes": 2272,
+                  "physicalInputBytes": 2272,
+                  "failedTasks": 0,
+                  "coordinatorOnly": false,
+                  "subStages": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "columns": [
+    "rows"
+  ],
+  "rows": [
+    [
+      1
+    ]
+  ]
+}

@@ -1,0 +1,79 @@
+name: pr1-ladygin
+services:
+  minio:
+    image: pr1-minio:2025-04-22
+    build: ./minio
+    pull_policy: build
+    command: server /data --console-address :9001
+    environment:
+      MINIO_ROOT_USER: minioadmin
+      MINIO_ROOT_PASSWORD: minioadmin
+    ports: ['127.0.0.1:9000:9000', '127.0.0.1:9001:9001']
+    volumes: [minio-data:/data]
+    mem_limit: 1g
+  bucket:
+    image: pr1-minio:2025-04-22
+    build: ./minio
+    pull_policy: build
+    depends_on: [minio]
+    entrypoint: /bin/sh
+    command: ['-c', 'until mc alias set local http://minio:9000 minioadmin minioadmin; do sleep 2; done; mc mb --ignore-existing local/warehouse']
+  postgres:
+    image: postgres:17.4
+    environment:
+      POSTGRES_PASSWORD: postgres
+    volumes: [pg-data:/var/lib/postgresql/data]
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U postgres']
+      interval: 3s
+      retries: 40
+    mem_limit: 512m
+  migrate:
+    image: quay.io/lakekeeper/catalog:v0.9.5
+    command: migrate
+    environment: &lake-env
+      LAKEKEEPER__PG_ENCRYPTION_KEY: This-is-NOT-Secure!
+      LAKEKEEPER__PG_DATABASE_URL_READ: postgresql://postgres:postgres@postgres:5432/postgres
+      LAKEKEEPER__PG_DATABASE_URL_WRITE: postgresql://postgres:postgres@postgres:5432/postgres
+    depends_on:
+      postgres: {condition: service_healthy}
+  lakekeeper:
+    image: quay.io/lakekeeper/catalog:v0.9.5
+    command: serve
+    environment: *lake-env
+    ports: ['127.0.0.1:8181:8181']
+    depends_on:
+      migrate: {condition: service_completed_successfully}
+      bucket: {condition: service_completed_successfully}
+    healthcheck:
+      test: ['CMD', '/home/nonroot/lakekeeper', 'healthcheck']
+      interval: 5s
+      retries: 40
+    mem_limit: 1g
+  trino:
+    image: trinodb/trino:476
+    ports: ['127.0.0.1:8080:8080']
+    volumes:
+      - ./config/catalog:/etc/trino/catalog:ro
+      - ./config/jvm.config:/etc/trino/jvm.config:ro
+      - ./config/config.properties:/etc/trino/config.properties:ro
+    depends_on:
+      lakekeeper: {condition: service_healthy}
+    mem_limit: 5g
+  runner:
+    image: python:3.12.10-slim
+    working_dir: /project
+    volumes: [.:/project]
+    profiles: [tools]
+    entrypoint: ['python', 'scripts/run.py']
+    mem_limit: 512m
+  spark:
+    build: ./spark
+    working_dir: /project
+    volumes: [.:/project]
+    profiles: [tools]
+    entrypoint: ['/opt/spark/bin/spark-submit', '--master', 'local[2]', '--driver-memory', '2g', '/project/scripts/spark_bronze.py']
+    mem_limit: 3g
+volumes:
+  minio-data:
+  pg-data:

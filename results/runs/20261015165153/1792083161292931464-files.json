@@ -1,0 +1,83 @@
+{
+  "id": "20261015_165241_00034_x55ec",
+  "label": "files",
+  "sql": "SELECT count(*) AS files, coalesce(sum(record_count),0) AS records,\n      coalesce(sum(file_size_in_bytes),0) AS bytes FROM lakekeeper.silver_20261015165153.\"order_lines$files\"",
+  "codec": "ZSTD",
+  "wall_seconds": 0.08912061299997731,
+  "stats": {
+    "state": "FINISHED",
+    "queued": false,
+    "scheduled": true,
+    "progressPercentage": 100.0,
+    "runningPercentage": 0.0,
+    "nodes": 1,
+    "totalSplits": 6,
+    "queuedSplits": 0,
+    "runningSplits": 0,
+    "completedSplits": 6,
+    "planningTimeMillis": 21,
+    "analysisTimeMillis": 13,
+    "cpuTimeMillis": 13,
+    "wallTimeMillis": 14,
+    "queuedTimeMillis": 0,
+    "elapsedTimeMillis": 73,
+    "finishingTimeMillis": 0,
+    "physicalInputTimeMillis": 0,
+    "processedRows": 1,
+    "processedBytes": 2128,
+    "physicalInputBytes": 2128,
+    "physicalWrittenBytes": 0,
+    "internalNetworkInputBytes": 98,
+    "peakMemoryBytes": 508,
+    "spilledBytes": 0,
+    "rootStage": {
+      "stageId": "0",
+      "state": "FINISHED",
+      "done": true,
+      "nodes": 1,
+      "totalSplits": 5,
+      "queuedSplits": 0,
+      "runningSplits": 0,
+      "completedSplits": 5,
+      "cpuTimeMillis": 2,
+      "wallTimeMillis": 2,
+      "processedRows": 1,
+      "processedBytes": 98,
+      "physicalInputBytes": 0,
+      "failedTasks": 0,
+      "coordinatorOnly": false,
+      "subStages": [
+        {
+          "stageId": "1",
+          "state": "FINISHED",
+          "done": true,
+          "nodes": 1,
+          "totalSplits": 1,
+          "queuedSplits": 0,
+          "runningSplits": 0,
+          "completedSplits": 1,
+          "cpuTimeMillis": 11,
+          "wallTimeMillis": 12,
+          "processedRows": 1,
+          "processedBytes": 2128,
+          "physicalInputBytes": 2128,
+          "failedTasks": 0,
+          "coordinatorOnly": false,
+          "subStages": []
+        }
+      ]
+    }
+  },
+  "columns": [
+    "files",
+    "records",
+    "bytes"
+  ],
+  "rows": [
+    [
+      1,
+      399,
+      4094
+    ]
+  ]
+}

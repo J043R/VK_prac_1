@@ -1,0 +1,66 @@
+{
+  "id": "20261015_165153_00000_x55ec",
+  "label": "nodes",
+  "sql": "SELECT node_id,node_version,coordinator,state FROM system.runtime.nodes",
+  "codec": "ZSTD",
+  "wall_seconds": 1.6933502089996182,
+  "stats": {
+    "state": "FINISHED",
+    "queued": false,
+    "scheduled": true,
+    "progressPercentage": 100.0,
+    "runningPercentage": 0.0,
+    "nodes": 1,
+    "totalSplits": 1,
+    "queuedSplits": 0,
+    "runningSplits": 0,
+    "completedSplits": 1,
+    "planningTimeMillis": 519,
+    "analysisTimeMillis": 139,
+    "cpuTimeMillis": 38,
+    "wallTimeMillis": 39,
+    "queuedTimeMillis": 19,
+    "elapsedTimeMillis": 1308,
+    "finishingTimeMillis": 12,
+    "physicalInputTimeMillis": 0,
+    "processedRows": 1,
+    "processedBytes": 44,
+    "physicalInputBytes": 44,
+    "physicalWrittenBytes": 0,
+    "internalNetworkInputBytes": 0,
+    "peakMemoryBytes": 292,
+    "spilledBytes": 0,
+    "rootStage": {
+      "stageId": "0",
+      "state": "FINISHED",
+      "done": true,
+      "nodes": 1,
+      "totalSplits": 1,
+      "queuedSplits": 0,
+      "runningSplits": 0,
+      "completedSplits": 1,
+      "cpuTimeMillis": 38,
+      "wallTimeMillis": 39,
+      "processedRows": 1,
+      "processedBytes": 44,
+      "physicalInputBytes": 44,
+      "failedTasks": 0,
+      "coordinatorOnly": false,
+      "subStages": []
+    }
+  },
+  "columns": [
+    "node_id",
+    "node_version",
+    "coordinator",
+    "state"
+  ],
+  "rows": [
+    [
+      "7a7a3679bb58",
+      "476",
+      true,
+      "active"
+    ]
+  ]
+}

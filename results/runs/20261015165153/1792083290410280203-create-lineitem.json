@@ -1,0 +1,98 @@
+{
+  "id": "20261015_165437_00121_x55ec",
+  "label": "create-lineitem",
+  "sql": "CREATE TABLE lakekeeper.bench_20261015165153_orc_gzip.lineitem WITH (format='ORC',format_version=2) AS SELECT * FROM lakekeeper.bronze_20261015165153.lineitem",
+  "codec": "GZIP",
+  "wall_seconds": 13.32197912599986,
+  "stats": {
+    "state": "FINISHED",
+    "queued": false,
+    "scheduled": true,
+    "progressPercentage": 100.0,
+    "runningPercentage": 0.0,
+    "nodes": 1,
+    "totalSplits": 21,
+    "queuedSplits": 0,
+    "runningSplits": 0,
+    "completedSplits": 21,
+    "planningTimeMillis": 53,
+    "analysisTimeMillis": 21,
+    "cpuTimeMillis": 38496,
+    "wallTimeMillis": 41500,
+    "queuedTimeMillis": 0,
+    "elapsedTimeMillis": 13310,
+    "finishingTimeMillis": 1,
+    "physicalInputTimeMillis": 501,
+    "processedRows": 6001215,
+    "processedBytes": 154698103,
+    "physicalInputBytes": 154698103,
+    "physicalWrittenBytes": 155797724,
+    "internalNetworkInputBytes": 734589729,
+    "peakMemoryBytes": 388612479,
+    "spilledBytes": 0,
+    "rootStage": {
+      "stageId": "0",
+      "state": "FINISHED",
+      "done": true,
+      "nodes": 1,
+      "totalSplits": 3,
+      "queuedSplits": 0,
+      "runningSplits": 0,
+      "completedSplits": 3,
+      "cpuTimeMillis": 76,
+      "wallTimeMillis": 220,
+      "processedRows": 24,
+      "processedBytes": 1825061,
+      "physicalInputBytes": 0,
+      "failedTasks": 0,
+      "coordinatorOnly": true,
+      "subStages": [
+        {
+          "stageId": "1",
+          "state": "FINISHED",
+          "done": true,
+          "nodes": 1,
+          "totalSplits": 10,
+          "queuedSplits": 0,
+          "runningSplits": 0,
+          "completedSplits": 10,
+          "cpuTimeMillis": 36500,
+          "wallTimeMillis": 38690,
+          "processedRows": 6001215,
+          "processedBytes": 732764668,
+          "physicalInputBytes": 0,
+          "failedTasks": 0,
+          "coordinatorOnly": false,
+          "subStages": [
+            {
+              "stageId": "2",
+              "state": "FINISHED",
+              "done": true,
+              "nodes": 1,
+              "totalSplits": 8,
+              "queuedSplits": 0,
+              "runningSplits": 0,
+              "completedSplits": 8,
+              "cpuTimeMillis": 1920,
+              "wallTimeMillis": 2590,
+              "processedRows": 6001215,
+              "processedBytes": 154698103,
+              "physicalInputBytes": 154698103,
+              "failedTasks": 0,
+              "coordinatorOnly": false,
+              "subStages": []
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "columns": [
+    "rows"
+  ],
+  "rows": [
+    [
+      6001215
+    ]
+  ]
+}

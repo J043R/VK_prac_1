@@ -1,0 +1,1111 @@
+{
+  "id": "20261015_165155_00001_x55ec",
+  "label": "session",
+  "sql": "SHOW SESSION",
+  "codec": "ZSTD",
+  "wall_seconds": 1.3484240830002818,
+  "stats": {
+    "state": "FINISHED",
+    "queued": false,
+    "scheduled": true,
+    "progressPercentage": 100.0,
+    "runningPercentage": 0.0,
+    "nodes": 1,
+    "totalSplits": 3,
+    "queuedSplits": 0,
+    "runningSplits": 0,
+    "completedSplits": 3,
+    "planningTimeMillis": 936,
+    "analysisTimeMillis": 61,
+    "cpuTimeMillis": 23,
+    "wallTimeMillis": 26,
+    "queuedTimeMillis": 1,
+    "elapsedTimeMillis": 1317,
+    "finishingTimeMillis": 3,
+    "physicalInputTimeMillis": 0,
+    "processedRows": 0,
+    "processedBytes": 0,
+    "physicalInputBytes": 0,
+    "physicalWrittenBytes": 0,
+    "internalNetworkInputBytes": 0,
+    "peakMemoryBytes": 24647,
+    "spilledBytes": 0,
+    "rootStage": {
+      "stageId": "0",
+      "state": "FINISHED",
+      "done": true,
+      "nodes": 1,
+      "totalSplits": 3,
+      "queuedSplits": 0,
+      "runningSplits": 0,
+      "completedSplits": 3,
+      "cpuTimeMillis": 23,
+      "wallTimeMillis": 26,
+      "processedRows": 151,
+      "processedBytes": 0,
+      "physicalInputBytes": 0,
+      "failedTasks": 0,
+      "coordinatorOnly": false,
+      "subStages": []
+    }
+  },
+  "columns": [
+    "Name",
+    "Value",
+    "Default",
+    "Type",
+    "Description"
+  ],
+  "rows": [
+    [
+      "adaptive_partial_aggregation_enabled",
+      "true",
+      "true",
+      "boolean",
+      "When enabled, partial aggregation might be adaptively turned off when it does not provide any performance gain"
+    ],
+    [
+      "adaptive_partial_aggregation_unique_rows_ratio_threshold",
+      "0.8",
+      "0.8",
+      "double",
+      "Ratio between aggregation output and input rows above which partial aggregation might be adaptively turned off"
+    ],
+    [
+      "aggregation_operator_unspill_memory_limit",
+      "4MB",
+      "4MB",
+      "varchar",
+      "How much memory should be allocated per aggregation operator in unspilling process"
+    ],
+    [
+      "collect_plan_statistics_for_all_queries",
+      "false",
+      "false",
+      "boolean",
+      "Collect plan statistics for non-EXPLAIN queries"
+    ],
+    [
+      "colocated_join",
+      "true",
+      "true",
+      "boolean",
+      "Use a colocated join when possible"
+    ],
+    [
+      "columnar_filter_evaluation_enabled",
+      "true",
+      "true",
+      "boolean",
+      "Enables columnar evaluation of filters"
+    ],
+    [
+      "default_filter_factor_enabled",
+      "false",
+      "false",
+      "boolean",
+      "use a default filter factor for unknown filters in a filter node"
+    ],
+    [
+      "determine_partition_count_for_write_enabled",
+      "false",
+      "false",
+      "boolean",
+      "Determine the number of partitions based on amount of data read and processed by the query for write queries"
+    ],
+    [
+      "dictionary_aggregation",
+      "false",
+      "false",
+      "boolean",
+      "Enable optimization for aggregations on dictionaries"
+    ],
+    [
+      "distinct_aggregations_strategy",
+      "",
+      "",
+      "varchar",
+      "Strategy to use for distinct aggregations.. Possible values: [SINGLE_STEP, MARK_DISTINCT, PRE_AGGREGATE, SPLIT_TO_SUBQUERIES, AUTOMATIC]"
+    ],
+    [
+      "distributed_sort",
+      "true",
+      "true",
+      "boolean",
+      "Parallelize sort across multiple nodes"
+    ],
+    [
+      "dynamic_row_filtering_selectivity_threshold",
+      "0.7",
+      "0.7",
+      "double",
+      "Avoid using dynamic row filters when fraction of rows selected is above threshold"
+    ],
+    [
+      "enable_dynamic_filtering",
+      "true",
+      "true",
+      "boolean",
+      "Enable dynamic filtering"
+    ],
+    [
+      "enable_dynamic_row_filtering",
+      "true",
+      "true",
+      "boolean",
+      "Enable fine-grained filtering of rows in the scan operator using dynamic filters"
+    ],
+    [
+      "enable_intermediate_aggregations",
+      "false",
+      "false",
+      "boolean",
+      "Enable the use of intermediate aggregations"
+    ],
+    [
+      "enable_large_dynamic_filters",
+      "true",
+      "true",
+      "boolean",
+      "Enable collection of large dynamic filters"
+    ],
+    [
+      "enable_stats_calculator",
+      "true",
+      "true",
+      "boolean",
+      "Enable statistics calculator"
+    ],
+    [
+      "exchange_compression_codec",
+      "NONE",
+      "NONE",
+      "varchar",
+      "Compression codec used for data in exchanges, supports NONE, LZ4, ZSTD. Possible values: [NONE, LZ4, ZSTD]"
+    ],
+    [
+      "execution_policy",
+      "phased",
+      "phased",
+      "varchar",
+      "Policy used for scheduling query tasks"
+    ],
+    [
+      "fault_tolerant_execution_adaptive_join_reordering_enabled",
+      "true",
+      "true",
+      "boolean",
+      "Reorder partitioned join based on run time stats in fault tolerant execution"
+    ],
+    [
+      "fault_tolerant_execution_adaptive_query_planning_enabled",
+      "true",
+      "true",
+      "boolean",
+      "Enable adaptive query planning for the fault tolerant execution"
+    ],
+    [
+      "filter_and_project_min_output_page_row_count",
+      "256",
+      "256",
+      "integer",
+      "Experimental: Minimum output page row count for filter and project operators"
+    ],
+    [
+      "filter_and_project_min_output_page_size",
+      "500kB",
+      "500kB",
+      "varchar",
+      "Experimental: Minimum output page size for filter and project operators"
+    ],
+    [
+      "filter_conjunction_independence_factor",
+      "0.75",
+      "0.75",
+      "double",
+      "Scales the strength of independence assumption for selectivity estimates of the conjunction of multiple filters"
+    ],
+    [
+      "force_spilling_join",
+      "false",
+      "false",
+      "boolean",
+      "Force the usage of spliing join operator in favor of the non-spilling one, even if spill is not enabled"
+    ],
+    [
+      "hide_inaccessible_columns",
+      "false",
+      "false",
+      "boolean",
+      "When enabled non-accessible columns are silently filtered from results from SELECT * statements"
+    ],
+    [
+      "ignore_downstream_preferences",
+      "false",
+      "false",
+      "boolean",
+      "Ignore Parent's PreferredProperties in AddExchange optimizer"
+    ],
+    [
+      "ignore_stats_calculator_failures",
+      "true",
+      "true",
+      "boolean",
+      "Ignore statistics calculator failures"
+    ],
+    [
+      "incremental_hash_array_load_factor_enabled",
+      "true",
+      "true",
+      "boolean",
+      "Use smaller load factor for small hash arrays in order to improve performance"
+    ],
+    [
+      "initial_splits_per_node",
+      "32",
+      "32",
+      "integer",
+      "The number of splits each node will run per task, initially"
+    ],
+    [
+      "iterative_optimizer_timeout",
+      "3.00m",
+      "3.00m",
+      "varchar",
+      "Timeout for plan optimization in iterative optimizer"
+    ],
+    [
+      "join_distribution_type",
+      "AUTOMATIC",
+      "AUTOMATIC",
+      "varchar",
+      "Join distribution type. Possible values: [BROADCAST, PARTITIONED, AUTOMATIC]"
+    ],
+    [
+      "join_max_broadcast_table_size",
+      "100MB",
+      "100MB",
+      "varchar",
+      "Maximum estimated size of a table that can be broadcast when using automatic join type selection"
+    ],
+    [
+      "join_multi_clause_independence_factor",
+      "0.25",
+      "0.25",
+      "double",
+      "Scales the strength of independence assumption for selectivity estimates of multi-clause joins"
+    ],
+    [
+      "join_partitioned_build_min_row_count",
+      "1000000",
+      "1000000",
+      "bigint",
+      "Minimum number of join build side rows required to use partitioned join lookup"
+    ],
+    [
+      "join_reordering_strategy",
+      "AUTOMATIC",
+      "AUTOMATIC",
+      "varchar",
+      "Join reordering strategy. Possible values: [NONE, ELIMINATE_CROSS_JOINS, AUTOMATIC]"
+    ],
+    [
+      "mark_distinct_strategy",
+      "",
+      "",
+      "varchar",
+      "Deprecated. Strategy to use for distinct aggregations.. Possible values: [NONE, ALWAYS, AUTOMATIC]"
+    ],
+    [
+      "max_drivers_per_task",
+      "",
+      "",
+      "integer",
+      "Maximum number of drivers per task"
+    ],
+    [
+      "max_hash_partition_count",
+      "100",
+      "100",
+      "integer",
+      "Maximum number of partitions for distributed joins and aggregations"
+    ],
+    [
+      "max_partial_top_n_memory",
+      "16MB",
+      "16MB",
+      "varchar",
+      "Max memory size for partial Top N aggregations. This can be turned off by setting it with '0'."
+    ],
+    [
+      "max_recursion_depth",
+      "10",
+      "10",
+      "integer",
+      "Maximum recursion depth for recursive common table expression"
+    ],
+    [
+      "max_reordered_joins",
+      "8",
+      "8",
+      "integer",
+      "The maximum number of joins to reorder as one group in cost-based join reordering"
+    ],
+    [
+      "max_tasks_waiting_for_execution_per_query",
+      "10",
+      "10",
+      "integer",
+      "Maximum number of tasks waiting to be scheduled per query. Split enumeration is paused by the scheduler when this threshold is crossed"
+    ],
+    [
+      "max_tasks_waiting_for_node_per_query",
+      "50",
+      "50",
+      "integer",
+      "Maximum possible number of tasks waiting for node allocation per query before scheduling of new tasks is paused"
+    ],
+    [
+      "max_unacknowledged_splits_per_task",
+      "2000",
+      "2000",
+      "integer",
+      "Maximum number of leaf splits awaiting delivery to a given task"
+    ],
+    [
+      "max_writer_task_count",
+      "100",
+      "100",
+      "integer",
+      "Maximum number of tasks that will participate in writing data"
+    ],
+    [
+      "merge_project_with_values",
+      "true",
+      "true",
+      "boolean",
+      "Inline project expressions into values"
+    ],
+    [
+      "min_hash_partition_count",
+      "4",
+      "4",
+      "integer",
+      "Minimum number of partitions for distributed joins and aggregations"
+    ],
+    [
+      "min_hash_partition_count_for_write",
+      "50",
+      "50",
+      "integer",
+      "Minimum number of partitions for distributed joins and aggregations in write queries"
+    ],
+    [
+      "min_input_rows_per_task",
+      "10000000",
+      "10000000",
+      "bigint",
+      "Minimum input rows required per task. This will help optimizer determine hash partition count for joins and aggregations"
+    ],
+    [
+      "min_input_size_per_task",
+      "5GB",
+      "5GB",
+      "varchar",
+      "Minimum input data size required per task. This will help optimizer determine hash partition count for joins and aggregations"
+    ],
+    [
+      "non_estimatable_predicate_approximation_enabled",
+      "true",
+      "true",
+      "boolean",
+      "Approximate the cost of filters which cannot be accurately estimated even with complete statistics"
+    ],
+    [
+      "omit_datetime_type_precision",
+      "false",
+      "false",
+      "boolean",
+      "Omit precision when rendering datetime type names with default precision"
+    ],
+    [
+      "optimize_duplicate_insensitive_joins",
+      "true",
+      "true",
+      "boolean",
+      "Optimize duplicate insensitive joins"
+    ],
+    [
+      "optimize_metadata_queries",
+      "false",
+      "false",
+      "boolean",
+      "Enable optimization for metadata queries"
+    ],
+    [
+      "optimize_top_n_ranking",
+      "true",
+      "true",
+      "boolean",
+      "Use top N ranking optimization"
+    ],
+    [
+      "pre_aggregate_case_aggregations_enabled",
+      "true",
+      "true",
+      "boolean",
+      "Pre-aggregate rows before GROUP BY with multiple CASE aggregations on same column"
+    ],
+    [
+      "predicate_pushdown_use_table_properties",
+      "true",
+      "true",
+      "boolean",
+      "Use table properties in predicate pushdown"
+    ],
+    [
+      "prefer_partial_aggregation",
+      "true",
+      "true",
+      "boolean",
+      "Prefer splitting aggregations into partial and final stages"
+    ],
+    [
+      "prefer_streaming_operators",
+      "false",
+      "false",
+      "boolean",
+      "Prefer source table layouts that produce streaming operators"
+    ],
+    [
+      "push_aggregation_through_outer_join",
+      "true",
+      "true",
+      "boolean",
+      "Allow pushing aggregations below joins"
+    ],
+    [
+      "push_filter_into_values_max_row_count",
+      "100",
+      "100",
+      "integer",
+      "Maximum number of rows in values for which filter is pushed down into values"
+    ],
+    [
+      "push_partial_aggregation_through_join",
+      "true",
+      "true",
+      "boolean",
+      "Push partial aggregations below joins"
+    ],
+    [
+      "push_table_write_through_union",
+      "true",
+      "true",
+      "boolean",
+      "Parallelize writes when using UNION ALL in queries that write data"
+    ],
+    [
+      "query_max_cpu_time",
+      "1000000000.00d",
+      "1000000000.00d",
+      "varchar",
+      "Maximum CPU time of a query"
+    ],
+    [
+      "query_max_execution_time",
+      "100.00d",
+      "100.00d",
+      "varchar",
+      "Maximum execution time of a query"
+    ],
+    [
+      "query_max_planning_time",
+      "10.00m",
+      "10.00m",
+      "varchar",
+      "Maximum planning time of a query"
+    ],
+    [
+      "query_max_run_time",
+      "100.00d",
+      "100.00d",
+      "varchar",
+      "Maximum run time of a query (includes the queueing time)"
+    ],
+    [
+      "query_max_scan_physical_bytes",
+      "",
+      "",
+      "varchar",
+      "Maximum scan physical bytes of a query"
+    ],
+    [
+      "query_priority",
+      "1",
+      "1",
+      "integer",
+      "The priority of queries. Larger numbers are higher priority"
+    ],
+    [
+      "query_retry_attempts",
+      "4",
+      "4",
+      "integer",
+      "Maximum number of query retry attempts"
+    ],
+    [
+      "redistribute_writes",
+      "true",
+      "true",
+      "boolean",
+      "Force parallel distributed writes"
+    ],
+    [
+      "remote_task_adaptive_update_request_size_enabled",
+      "true",
+      "true",
+      "boolean",
+      "Experimental: Enable adaptive adjustment for size of remote task update request"
+    ],
+    [
+      "remote_task_guaranteed_splits_per_request",
+      "3",
+      "3",
+      "integer",
+      "Guaranteed splits per remote task request"
+    ],
+    [
+      "remote_task_max_request_size",
+      "8MB",
+      "8MB",
+      "varchar",
+      "Experimental: Max size of remote task update request"
+    ],
+    [
+      "remote_task_request_size_headroom",
+      "2MB",
+      "2MB",
+      "varchar",
+      "Experimental: Headroom for size of remote task update request"
+    ],
+    [
+      "required_workers_count",
+      "1",
+      "1",
+      "integer",
+      "Minimum number of active workers that must be available before the query will start"
+    ],
+    [
+      "required_workers_max_wait_time",
+      "5.00m",
+      "5.00m",
+      "varchar",
+      "Maximum time to wait for minimum number of workers before the query is failed"
+    ],
+    [
+      "resource_overcommit",
+      "false",
+      "false",
+      "boolean",
+      "Use resources which are not guaranteed to be available to the query"
+    ],
+    [
+      "retry_delay_scale_factor",
+      "2.0",
+      "2.0",
+      "double",
+      "Maximum delay before initiating a retry attempt. Delay increases exponentially for each subsequent attempt starting from 'retry_initial_delay'"
+    ],
+    [
+      "retry_initial_delay",
+      "10.00s",
+      "10.00s",
+      "varchar",
+      "Initial delay before initiating a retry attempt. Delay increases exponentially for each subsequent attempt up to 'retry_max_delay'"
+    ],
+    [
+      "retry_max_delay",
+      "1.00m",
+      "1.00m",
+      "varchar",
+      "Maximum delay before initiating a retry attempt. Delay increases exponentially for each subsequent attempt starting from 'retry_initial_delay'"
+    ],
+    [
+      "rewrite_filtering_semi_join_to_inner_join",
+      "true",
+      "true",
+      "boolean",
+      "Rewrite semi join in filtering context to inner join"
+    ],
+    [
+      "scale_writers",
+      "true",
+      "true",
+      "boolean",
+      "Scale out writers based on throughput (use minimum necessary)"
+    ],
+    [
+      "skip_redundant_sort",
+      "true",
+      "true",
+      "boolean",
+      "Skip redundant sort operations"
+    ],
+    [
+      "spatial_join",
+      "true",
+      "true",
+      "boolean",
+      "Use spatial index for spatial join when possible"
+    ],
+    [
+      "spatial_partitioning_table_name",
+      "",
+      "",
+      "varchar",
+      "Name of the table containing spatial partitioning scheme"
+    ],
+    [
+      "spill_enabled",
+      "false",
+      "false",
+      "boolean",
+      "Enable spilling"
+    ],
+    [
+      "split_concurrency_adjustment_interval",
+      "100.00ms",
+      "100.00ms",
+      "varchar",
+      "Experimental: Interval between changes to the number of concurrent splits per node"
+    ],
+    [
+      "statistics_cpu_timer_enabled",
+      "true",
+      "true",
+      "boolean",
+      "Experimental: Enable cpu time tracking for automatic column statistics collection on write"
+    ],
+    [
+      "statistics_precalculation_for_pushdown_enabled",
+      "true",
+      "true",
+      "boolean",
+      "Enable statistics precalculation for pushdown"
+    ],
+    [
+      "table_scan_node_partitioning_min_bucket_to_task_ratio",
+      "0.5",
+      "0.5",
+      "double",
+      "Min table scan bucket to task ratio for which plan will be adopted to node pre-partitioned tables"
+    ],
+    [
+      "task_concurrency",
+      "2",
+      "8",
+      "integer",
+      "Default number of local parallel jobs per worker"
+    ],
+    [
+      "task_max_writer_count",
+      "16",
+      "16",
+      "integer",
+      "Maximum number of local parallel table writers per task when either task writer scaling or preferred partitioning is used"
+    ],
+    [
+      "task_min_writer_count",
+      "1",
+      "1",
+      "integer",
+      "Minimum number of local parallel table writers per task when preferred partitioning and task writer scaling are not used"
+    ],
+    [
+      "task_retry_attempts_per_task",
+      "4",
+      "4",
+      "integer",
+      "Maximum number of task retry attempts per single task"
+    ],
+    [
+      "task_scale_writers_enabled",
+      "true",
+      "true",
+      "boolean",
+      "Scale the number of concurrent table writers per task based on throughput"
+    ],
+    [
+      "task_share_index_loading",
+      "false",
+      "false",
+      "boolean",
+      "Share index join lookups and caching within a task"
+    ],
+    [
+      "use_cost_based_partitioning",
+      "true",
+      "true",
+      "boolean",
+      "When enabled the cost based optimizer is used to determine if repartitioning the output of an already partitioned stage is necessary"
+    ],
+    [
+      "use_exact_partitioning",
+      "false",
+      "false",
+      "boolean",
+      "When enabled this forces data repartitioning unless the partitioning of upstream stage matches exactly what downstream stage expects"
+    ],
+    [
+      "use_legacy_window_filter_pushdown",
+      "false",
+      "false",
+      "boolean",
+      "Use legacy window filter pushdown optimizer"
+    ],
+    [
+      "use_preferred_write_partitioning",
+      "true",
+      "true",
+      "boolean",
+      "Use preferred write partitioning"
+    ],
+    [
+      "use_table_scan_node_partitioning",
+      "true",
+      "true",
+      "boolean",
+      "Adapt plan to node pre-partitioned tables"
+    ],
+    [
+      "writer_scaling_min_data_processed",
+      "120MB",
+      "120MB",
+      "varchar",
+      "Minimum amount of uncompressed output data processed by writers before writer scaling can happen"
+    ],
+    [
+      "lakekeeper.bucket_execution_enabled",
+      "true",
+      "true",
+      "boolean",
+      "Enable bucket-aware execution: use physical bucketing information to optimize queries"
+    ],
+    [
+      "lakekeeper.collect_extended_statistics_on_write",
+      "true",
+      "true",
+      "boolean",
+      "Collect extended statistics during writes"
+    ],
+    [
+      "lakekeeper.compression_codec",
+      "ZSTD",
+      "ZSTD",
+      "varchar",
+      "Compression codec to use when writing files. Possible values: [NONE, SNAPPY, LZ4, ZSTD, GZIP]"
+    ],
+    [
+      "lakekeeper.dynamic_filtering_wait_timeout",
+      "1.00s",
+      "1.00s",
+      "varchar",
+      "Duration to wait for completion of dynamic filters during split generation"
+    ],
+    [
+      "lakekeeper.expire_snapshots_min_retention",
+      "7.00d",
+      "7.00d",
+      "varchar",
+      "Minimal retention period for expire_snapshot procedure"
+    ],
+    [
+      "lakekeeper.extended_statistics_enabled",
+      "true",
+      "true",
+      "boolean",
+      "Enable collection (ANALYZE) and use of extended statistics."
+    ],
+    [
+      "lakekeeper.file_based_conflict_detection_enabled",
+      "true",
+      "true",
+      "boolean",
+      "Enable file-based conflict detection: take partition information from the actual written files as a source for the conflict detection system"
+    ],
+    [
+      "lakekeeper.idle_writer_min_file_size",
+      "16MB",
+      "16MB",
+      "varchar",
+      "Minimum data written by a single partition writer before it can be consider as 'idle' and could be closed by the engine"
+    ],
+    [
+      "lakekeeper.incremental_refresh_enabled",
+      "true",
+      "true",
+      "boolean",
+      "Enable Incremental refresh for MVs backed by Iceberg tables, when possible."
+    ],
+    [
+      "lakekeeper.max_partitions_per_writer",
+      "100",
+      "100",
+      "integer",
+      "Maximum number of partitions per writer"
+    ],
+    [
+      "lakekeeper.merge_manifests_on_write",
+      "true",
+      "true",
+      "boolean",
+      "Compact manifest files when performing write operations"
+    ],
+    [
+      "lakekeeper.minimum_assigned_split_weight",
+      "0.05",
+      "0.05",
+      "double",
+      "Minimum assigned split weight"
+    ],
+    [
+      "lakekeeper.orc_bloom_filters_enabled",
+      "false",
+      "false",
+      "boolean",
+      "ORC: Enable bloom filters for predicate pushdown"
+    ],
+    [
+      "lakekeeper.orc_lazy_read_small_ranges",
+      "true",
+      "true",
+      "boolean",
+      "Experimental: ORC: Read small file segments lazily"
+    ],
+    [
+      "lakekeeper.orc_max_buffer_size",
+      "8MB",
+      "8MB",
+      "varchar",
+      "ORC: Maximum size of a single read"
+    ],
+    [
+      "lakekeeper.orc_max_merge_distance",
+      "1MB",
+      "1MB",
+      "varchar",
+      "ORC: Maximum size of gap between two reads to merge into a single read"
+    ],
+    [
+      "lakekeeper.orc_max_read_block_size",
+      "16MB",
+      "16MB",
+      "varchar",
+      "ORC: Soft max size of Trino blocks produced by ORC reader"
+    ],
+    [
+      "lakekeeper.orc_nested_lazy_enabled",
+      "true",
+      "true",
+      "boolean",
+      "Experimental: ORC: Lazily read nested data"
+    ],
+    [
+      "lakekeeper.orc_stream_buffer_size",
+      "8MB",
+      "8MB",
+      "varchar",
+      "ORC: Size of buffer for streaming reads"
+    ],
+    [
+      "lakekeeper.orc_string_statistics_limit",
+      "64B",
+      "64B",
+      "varchar",
+      "ORC: Maximum size of string statistics; drop if exceeding"
+    ],
+    [
+      "lakekeeper.orc_tiny_stripe_threshold",
+      "8MB",
+      "8MB",
+      "varchar",
+      "ORC: Threshold below which an ORC stripe or file will read in its entirety"
+    ],
+    [
+      "lakekeeper.orc_writer_max_dictionary_memory",
+      "16MB",
+      "16MB",
+      "varchar",
+      "ORC: Max dictionary memory"
+    ],
+    [
+      "lakekeeper.orc_writer_max_row_group_rows",
+      "10000",
+      "10000",
+      "integer",
+      "ORC: Max number of rows in a row group"
+    ],
+    [
+      "lakekeeper.orc_writer_max_stripe_rows",
+      "10000000",
+      "10000000",
+      "integer",
+      "ORC: Max stripe row count"
+    ],
+    [
+      "lakekeeper.orc_writer_max_stripe_size",
+      "64MB",
+      "64MB",
+      "varchar",
+      "ORC: Max stripe size"
+    ],
+    [
+      "lakekeeper.orc_writer_min_stripe_size",
+      "32MB",
+      "32MB",
+      "varchar",
+      "ORC: Min stripe size"
+    ],
+    [
+      "lakekeeper.orc_writer_validate_mode",
+      "BOTH",
+      "BOTH",
+      "varchar",
+      "ORC: Level of detail in ORC validation. Possible values: [HASHED, DETAILED, BOTH]"
+    ],
+    [
+      "lakekeeper.orc_writer_validate_percentage",
+      "0.0",
+      "0.0",
+      "double",
+      "ORC: Percentage of written files to validate by re-reading them"
+    ],
+    [
+      "lakekeeper.parquet_ignore_statistics",
+      "false",
+      "false",
+      "boolean",
+      "Ignore statistics from Parquet to allow querying files with corrupted or incorrect statistics"
+    ],
+    [
+      "lakekeeper.parquet_max_read_block_row_count",
+      "8192",
+      "8192",
+      "integer",
+      "Parquet: Maximum number of rows read in a batch"
+    ],
+    [
+      "lakekeeper.parquet_max_read_block_size",
+      "16MB",
+      "16MB",
+      "varchar",
+      "Parquet: Maximum size of a block to read"
+    ],
+    [
+      "lakekeeper.parquet_small_file_threshold",
+      "3MB",
+      "3MB",
+      "varchar",
+      "Parquet: Size below which a parquet file will be read entirely"
+    ],
+    [
+      "lakekeeper.parquet_use_bloom_filter",
+      "true",
+      "true",
+      "boolean",
+      "Use Parquet Bloom filters"
+    ],
+    [
+      "lakekeeper.parquet_vectorized_decoding_enabled",
+      "true",
+      "true",
+      "boolean",
+      "Enable using Java Vector API for faster decoding of parquet files"
+    ],
+    [
+      "lakekeeper.parquet_writer_batch_size",
+      "10000",
+      "10000",
+      "integer",
+      "Parquet: Maximum number of rows passed to the writer in each batch"
+    ],
+    [
+      "lakekeeper.parquet_writer_block_size",
+      "128MB",
+      "128MB",
+      "varchar",
+      "Parquet: Writer block size"
+    ],
+    [
+      "lakekeeper.parquet_writer_page_size",
+      "1048576B",
+      "1048576B",
+      "varchar",
+      "Parquet: Writer page size"
+    ],
+    [
+      "lakekeeper.parquet_writer_page_value_count",
+      "60000",
+      "60000",
+      "integer",
+      "Parquet: Writer page row count"
+    ],
+    [
+      "lakekeeper.projection_pushdown_enabled",
+      "true",
+      "true",
+      "boolean",
+      "Read only required fields from a row type"
+    ],
+    [
+      "lakekeeper.query_partition_filter_required",
+      "false",
+      "false",
+      "boolean",
+      "Require filter on partition column"
+    ],
+    [
+      "lakekeeper.query_partition_filter_required_schemas",
+      "[]",
+      "[]",
+      "array(varchar)",
+      "List of schemas for which filter on partition column is enforced."
+    ],
+    [
+      "lakekeeper.remove_orphan_files_min_retention",
+      "7.00d",
+      "7.00d",
+      "varchar",
+      "Minimal retention period for remove_orphan_files procedure"
+    ],
+    [
+      "lakekeeper.sorted_writing_enabled",
+      "true",
+      "true",
+      "boolean",
+      "Enable sorted writing to tables with a specified sort order"
+    ],
+    [
+      "lakekeeper.statistics_enabled",
+      "true",
+      "true",
+      "boolean",
+      "Expose table statistics"
+    ],
+    [
+      "lakekeeper.target_max_file_size",
+      "1GB",
+      "1GB",
+      "varchar",
+      "Target maximum size of written files; the actual size may be larger"
+    ],
+    [
+      "lakekeeper.use_file_size_from_metadata",
+      "true",
+      "true",
+      "boolean",
+      "Use file size stored in Iceberg metadata"
+    ]
+  ]
+}

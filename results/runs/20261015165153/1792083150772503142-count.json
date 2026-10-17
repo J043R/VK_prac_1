@@ -1,0 +1,79 @@
+{
+  "id": "20261015_165230_00017_x55ec",
+  "label": "count",
+  "sql": "SELECT count(*) FROM lakekeeper.bronze_20261015165153.lineitem",
+  "codec": "ZSTD",
+  "wall_seconds": 0.20053798999924766,
+  "stats": {
+    "state": "FINISHED",
+    "queued": false,
+    "scheduled": true,
+    "progressPercentage": 100.0,
+    "runningPercentage": 0.0,
+    "nodes": 1,
+    "totalSplits": 11,
+    "queuedSplits": 0,
+    "runningSplits": 0,
+    "completedSplits": 11,
+    "planningTimeMillis": 52,
+    "analysisTimeMillis": 31,
+    "cpuTimeMillis": 180,
+    "wallTimeMillis": 188,
+    "queuedTimeMillis": 1,
+    "elapsedTimeMillis": 178,
+    "finishingTimeMillis": 1,
+    "physicalInputTimeMillis": 0,
+    "processedRows": 6001215,
+    "processedBytes": 0,
+    "physicalInputBytes": 0,
+    "physicalWrittenBytes": 0,
+    "internalNetworkInputBytes": 352,
+    "peakMemoryBytes": 1152,
+    "spilledBytes": 0,
+    "rootStage": {
+      "stageId": "0",
+      "state": "FINISHED",
+      "done": true,
+      "nodes": 1,
+      "totalSplits": 3,
+      "queuedSplits": 0,
+      "runningSplits": 0,
+      "completedSplits": 3,
+      "cpuTimeMillis": 3,
+      "wallTimeMillis": 3,
+      "processedRows": 8,
+      "processedBytes": 352,
+      "physicalInputBytes": 0,
+      "failedTasks": 0,
+      "coordinatorOnly": false,
+      "subStages": [
+        {
+          "stageId": "1",
+          "state": "FINISHED",
+          "done": true,
+          "nodes": 1,
+          "totalSplits": 8,
+          "queuedSplits": 0,
+          "runningSplits": 0,
+          "completedSplits": 8,
+          "cpuTimeMillis": 177,
+          "wallTimeMillis": 185,
+          "processedRows": 6001215,
+          "processedBytes": 0,
+          "physicalInputBytes": 0,
+          "failedTasks": 0,
+          "coordinatorOnly": false,
+          "subStages": []
+        }
+      ]
+    }
+  },
+  "columns": [
+    "_col0"
+  ],
+  "rows": [
+    [
+      6001215
+    ]
+  ]
+}

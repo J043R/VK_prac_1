@@ -1,0 +1,7 @@
+{
+  "complete": true,
+  "pipeline": true,
+  "benchmark": true,
+  "schema_and_snapshot": true,
+  "spark": true
+}
